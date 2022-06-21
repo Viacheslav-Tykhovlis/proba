@@ -1,0 +1,244 @@
+:root{
+    --one-text-color: #757575;
+    --two-text-color:#212121; 
+    --accent-color:#2196F3;
+    --two-accent-color:#ffffff;
+
+    --transition-timing: 250ms;
+    --transition-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+ul{
+    list-style: none;
+}
+.link {
+    text-decoration: none;
+}
+
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.title {
+    font-weight: 700;
+   
+    color: var(--two-text-color);
+}
+.text{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.span {
+    color: var(--two-text-color);
+}
+.subtitle{
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.67;
+    text-align: center;
+
+    margin-top: 0;
+    margin-bottom: 50px;
+
+    color: var(--two-text-color);
+}
+.body{
+   
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+
+    color: var(--one-text-color);
+} 
+@mixin mq($type) {
+    $mobile: 480px; 
+    $tablet: 768px;
+    $desktop: 1200px;
+
+    @if $type=='mobile-only' {
+        @media screen and (max-width: #{$tablet - 0.02}) {
+            @content;
+        }
+    }
+    @if $type=='mobile'{
+    @media screen and (min-width: $mobile) {
+        @content;
+    }
+    }
+
+    @if $type=='tablet-only' {
+        @media screen and (min-width: $tablet) and (max-width: #{$desktop - 0.02}) {
+            @content;
+        }
+    }
+    @if $type=='tablet' {
+        @media screen and (min-width: $tablet) {
+            @content;
+     }
+    }
+    
+    @if $type=='not-desktop' {
+        @media screen and (max-width: #{$desktop - 0.02}) {
+            @content;
+        }
+    }
+    @if $type=='desktop' {
+        @media screen and (min-width: $desktop) {
+            @content;
+        }
+    }
+    @if $type== 'retina' {
+        @media (min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+        @content;
+    }
+}
+}
+
+.container {
+    padding: 0 15px;
+    margin: 0 auto;
+
+    //  @include mq (tablet-only) {
+    //      width: 768px;
+    //  }
+    
+    //  @include mq (desktop) {
+    //     width: 1200px;
+    //  }
+}
+
+
+
+
+.team
+{
+     padding-top: 60px;
+     padding-bottom: 60px;
+
+ @include mq (desktop) {
+  
+    padding-top: 94px;
+    padding-bottom: 94px;
+    
+ }
+}
+.footer{
+         padding-top: 60px;
+         padding-bottom: 60px;
+         background-color:  #2F303A;
+    
+    }
+.benefits{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    @include mq (desktop){
+        padding-bottom: 0px;
+    }
+}
+
+.team{
+    background-color: #F5F4FA;
+&__staff{
+        padding-left: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        display: flex;
+        justify-content: center;
+       
+    @include mq (not-desktop){
+        flex-wrap: wrap;
+    }
+    @include mq (tablet-only){
+        margin: -15px;
+    }
+}
+&__item{
+    text-align: center;
+
+    background-color:var(--two-accent-color);
+    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
+    border-radius: 0 0 6px 6px;
+
+    @include mq (mobile-only){
+        &:not(:last-child){
+            margin-bottom: 30px;
+        }
+    }
+    @include mq (tablet-only){
+        flex-basis: calc(100% / 2 - 30px);
+         margin: 15px;  
+    }
+ 
+    @include mq (desktop){
+        &:not(:last-child){
+        margin-right: 30px;
+        }
+    }
+
+}
+
+&__text{
+    margin-bottom: 16px;
+}
+&__desc{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+&__name{
+    margin-top: 0;
+    margin-bottom: 10px;
+    
+    font-size: 16px;
+    line-height: 1.2;
+    
+    color: var(--two-text-color);
+}
+}
+.team-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-left: 0;
+
+&__item:not(:last-child){
+    margin-right: 10px;
+}
+&__link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+
+    background-color: var(--two-accent-color);
+    color: #AFB1B8;
+    transition: 
+    color 
+    var(--transition-timing)
+    var(--transition-function), 
+    background-color
+    var(--transition-timing)
+    var(--transition-function);
+}
+&__link:hover, 
+&__link:focus 
+{
+    background-color: var(--accent-color); 
+    color: var(--two-accent-color); 
+}
+&__icon{
+    fill: currentColor;
+}
+}
+
+

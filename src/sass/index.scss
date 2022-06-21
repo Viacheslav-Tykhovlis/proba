@@ -1,10 +1,16 @@
-@import './common';
-// @import './example';
 
-// @import './Aleksey Knigin';
+@import './common';
+@import 'utils/globalstyles';
+@import 'utils/placeholders';
+@import 'utils/vars';
+// @import './example';
+@import './mixins';
+
+@import './header';
 @import './hero';
 // @import './dmitry29';
-// @import './Ivan Vodopianov';
-// @import './KravchuK25';
+@import './team';
+@import './gallery';
+@import 'components/clients-section';
 // @import './Nick Leso';
-// @import './Viacheslav';
+@import './footer';
