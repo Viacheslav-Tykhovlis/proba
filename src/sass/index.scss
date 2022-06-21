@@ -1,4 +1,7 @@
 @import './common';
+@import 'utils/globalstyles';
+@import 'utils/placeholders';
+@import 'utils/vars';
 // @import './example';
 
 // @import './Aleksey Knigin';
@@ -6,5 +9,5 @@
 // @import './dmitry29';
 // @import './Ivan Vodopianov';
 // @import './KravchuK25';
-// @import './Nick Leso';
+@import 'components/clients-section';
 // @import './Viacheslav';
