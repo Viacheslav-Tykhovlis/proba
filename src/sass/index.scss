@@ -1,13 +1,17 @@
+
 @import './common';
 @import 'utils/globalstyles';
 @import 'utils/placeholders';
 @import 'utils/vars';
 // @import './example';
+@import './mixins';
 
 // @import './Aleksey Knigin';
 // @import './Bohdan';
 // @import './dmitry29';
-// @import './Ivan Vodopianov';
+@import './gallery';
 // @import './KravchuK25';
 @import 'components/clients-section';
-// @import './Viacheslav';
+
+// @import './Nick Leso';
+@import './footer';
